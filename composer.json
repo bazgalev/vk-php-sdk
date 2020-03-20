@@ -1,5 +1,5 @@
 {
-    "name": "vkcom/vk-php-sdk",
+    "name": "bazgalev/vk-php-sdk",
     "description": "VK PHP SDK",
     "keywords": ["vk", "sdk"],
     "type": "library",

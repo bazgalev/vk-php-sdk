@@ -2,6 +2,7 @@
 
 namespace VK\Client;
 
+use VK\Actions\Audio;
 use VK\Client\Enums\VKLanguage;
 use VK\Actions\Account;
 use VK\Actions\Ads;
@@ -222,6 +223,11 @@ class VKApiClient {
      * @var Widgets
      */
     private $widgets;
+
+    /**
+     * @var Audio
+     */
+    private $audio;
 
     /**
      * VKApiClient constructor.
@@ -624,4 +630,15 @@ class VKApiClient {
         return $this->widgets;
     }
 
+    /**
+     * @return Audio
+     */
+    public function audio(): Audio
+    {
+        if (!$this->audio){
+            $this->audio = new Audio($this->request);
+        }
+
+        return $this->audio;
+    }
 }
