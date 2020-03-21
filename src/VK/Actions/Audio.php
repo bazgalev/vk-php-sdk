@@ -47,10 +47,25 @@ class Audio
      */
     public function save($access_token, array $params)
     {
-        return $this->request->post('audio.save', $access_token, [
-            'server' => $params['server'],
-            'audio' => $params['audio'],
-            'hash' => $params['hash'],
-        ]);
+        return $this->request->post('audio.save', $access_token, $params);
+    }
+
+    /**
+     * @param $access_token
+     * @param array $params
+     *  -@var integer audio_id
+     *  -@var integer owner_id
+     *  -@var integer group_id
+     * - @var integer playlist_id
+     * - @var string ref
+     * - @var string access_key
+     * - @var string track_code
+     * @return mixed
+     * @throws \VK\Exceptions\VKApiException
+     * @throws \VK\Exceptions\VKClientException
+     */
+    public function add($access_token, array $params)
+    {
+        return $this->request->post('audio.add', $access_token, $params);
     }
 }
